@@ -1,6 +1,10 @@
-const hasNoKey = a => key => !a[key]
+const doesntHaveProperty = require('./lib/doesntHaveProperty')
+const isEmpty = require('./lib/isEmpty')
+
+const compareProperty = (a, b) => key =>
+
 const objectDifference = (a, b) => {
-  const difference = Object.keys(a).filter(hasNoKey(b))
+  const difference = Object.keys(a).filter()
 
   return difference.length > 0
     ? difference.reduce((object, key) => {
@@ -10,9 +14,8 @@ const objectDifference = (a, b) => {
       }, {})
     : undefined
 }
-const isEmpty = a => Object.keys(a).length === 0
 
-module.exports = (a, b) => {
+function compareObject (a, b) {
   if (!(a instanceof Object) || !(b instanceof Object)) {
     return undefined
   }
@@ -24,3 +27,5 @@ module.exports = (a, b) => {
     ? true
     : [ removals, additions ]
 }
+
+module.exports = compareObject
