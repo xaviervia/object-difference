@@ -1,76 +1,33 @@
-# Conditions for diff to work:
+> Note: For both Object and Array, the comparison is done in two steps:
+>
+> 1. The difference function checks what properties are present and missing in the respective targets
+> 2. Whenever a property is present in both targets, the comparisonFunction is invoked, passing down the values of the property in both cases and the `options` object into it
 
-- All elements in an Array are either values or objects with a unique `key` property. These type of structures are not supported:
+## objectDifference
 
-  [
-   [0]
-  ]
-
-  [
-    {
-      a: 1
-    },
-
-    {
-      b: 2
-    }
-  ]
-
-# Notes
-
-- Objects in an Array need a unique `key` property to be identified in the diff.
-- There needs to be a comparison result format to be passed around:
-
-
-{
-  removed: 1,
-  different: 2,
-  equal: 3
-}
-
-{
-  different: 3
-  equal: 3,
-  added: 4
-}
-
-
-[
+```js
+objectDifference(
+  previousObject,
+  nextObject,
   {
-    removed: 1,
-    different: 2
-  },
+    comparisonFunction = objectDifference
+  }
+)
+```
 
+To be tested with a comparisonFunction that runs a simple reference comparison.
+
+## arrayDifference
+
+```js
+arrayDifference(
+  previousArray,
+  nextArray,
   {
-    different: 3,
-    added: 4
+    comparisonFunction = objectDifference,
+    keyProperty = 'key'
   }
-]
+)
+```
 
-Status = REMOVE | KEEP | ADD
-
-item: {
-  key: String | Integer
-  status: REMOVE | KEEP | ADD
-  value: {}
-}
-
-
-[1] -> {
- key: 1,
- status: Status,
- value: 1
-}
-
-[{key: 'a', is: 'something'}] -> {
-  key: 'a',
-  status: Status,
-  value: {
-    key: 'a',
-    is: 'something'
-  }
-}
-
-[[1]] -> {
-
-}
+Absence of `key` property will throw an Error. To be tested with a comparisonFunction that runs a simple reference comparison.

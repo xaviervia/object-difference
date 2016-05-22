@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "washington test"
+    "test": "washington test/objectDifference"
   },
   "keywords": [],
   "author": "",
