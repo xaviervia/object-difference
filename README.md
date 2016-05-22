@@ -2,6 +2,7 @@
 >
 > 1. The difference function checks what properties are present and missing in the respective targets
 > 2. Whenever a property is present in both targets, the comparisonFunction is invoked, passing down the values of the property in both cases and the `options` object into it
+> 3. Reordering of the exact same properties in an Array will not be detected.
 
 ## objectDifference
 
