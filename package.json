@@ -1,13 +1,13 @@
 {
   "name": "object-difference",
-  "version": "1.0.0",
-  "description": "",
+  "version": "0.1.0",
+  "description": "An experimental tool for getting the difference between two object structures with as little metadata as possible.",
   "main": "index.js",
   "scripts": {
-    "test": "washington test/arrayDifference"
+    "test": "washington test"
   },
   "keywords": [],
-  "author": "",
+  "author": "Fernando Vía Canel <fernando.via@gmail.com>",
   "license": "ISC",
   "devDependencies": {
     "washington": "^0.12.0"
