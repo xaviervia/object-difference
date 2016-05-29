@@ -1,6 +1,6 @@
 const notUndefined = item => item !== undefined
 
-const arrayDifference = (a, b, options) => {
+export default (a, b, options) => {
   const cacheForRight = {}
   const left = a.map(x => {
     const rightVersion = b.find(y => y.key === x.key)
@@ -27,7 +27,7 @@ const arrayDifference = (a, b, options) => {
   const right = b.map(x => {
     if (cacheForRight[x.key] === undefined) {
       return x
-    } else  if (cacheForRight[x.key] === null) {
+    } else if (cacheForRight[x.key] === null) {
       return undefined
     } else {
       return Object.assign({}, cacheForRight[x.key], { key: x.key })
@@ -41,5 +41,3 @@ const arrayDifference = (a, b, options) => {
     ? [ finalLeft, finalRight ]
     : undefined
 }
-
-module.exports = arrayDifference

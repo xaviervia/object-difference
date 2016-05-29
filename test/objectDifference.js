@@ -1,6 +1,6 @@
-const example = require('washington')
-const assert = require('assert')
-const objectDifference = require('../src/objectDifference')
+import assert from 'assert'
+import example from 'washington'
+import objectDifference from '../src/objectDifference'
 
 const referenceDifference = (a, b) =>
   a === b

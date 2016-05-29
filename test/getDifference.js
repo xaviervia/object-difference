@@ -1,6 +1,6 @@
-const example = require('washington')
-const assert = require('assert')
-const getDifference = require('../src/getDifference')
+import assert from 'assert'
+import example from 'washington'
+import getDifference from '../src/getDifference'
 
 example('getDifference: equal scalar', () =>
   assert.equal(

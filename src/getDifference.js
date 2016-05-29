@@ -1,7 +1,7 @@
-const arrayDifference = require('../src/arrayDifference')
-const objectDifference = require('../src/objectDifference')
+import arrayDifference from '../src/arrayDifference'
+import objectDifference from '../src/objectDifference'
 
-const getDifference = (a, b) => {
+export default function getDifference (a, b) {
   if (a === b) {
     return undefined
   } else if (a instanceof Array && b instanceof Array) {
@@ -16,5 +16,3 @@ const getDifference = (a, b) => {
     return [a, b]
   }
 }
-
-module.exports = getDifference

@@ -57,7 +57,7 @@ const reduceSide = (side, options) => (object, annotatedKey) => {
   return object
 }
 
-const objectDifference = (a, b, options) => {
+export default (a, b, options) => {
   const result = [LEFT, RIGHT].map(side =>
     keysUnion(a, b)
       .map(annotateKey(a, b))
@@ -71,5 +71,3 @@ const objectDifference = (a, b, options) => {
     ? undefined
     : result
 }
-
-module.exports = objectDifference

@@ -1,7 +1,7 @@
-const example = require('washington')
-const assert = require('assert')
-const objectDifference = require('../src/objectDifference')
-const arrayDifference = require('../src/arrayDifference')
+import assert from 'assert'
+import example from 'washington'
+import arrayDifference from '../src/arrayDifference'
+import objectDifference from '../src/objectDifference'
 
 const referenceCheckAndObjectCheck = (a, b) => {
   if (a === b) {

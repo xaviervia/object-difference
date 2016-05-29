@@ -4,12 +4,20 @@
   "description": "An experimental tool for getting the difference between two object structures with as little metadata as possible.",
   "main": "index.js",
   "scripts": {
-    "test": "washington test"
+    "build": "rm -rf lib && babel src --out-dir lib",
+    "prepublish": "not-in-install && npm prune && npm test && npm run build || in-install",
+    "test": "standard && flow check && babel-node test"
   },
   "keywords": [],
   "author": "Fernando Vía Canel <fernando.via@gmail.com>",
   "license": "ISC",
   "devDependencies": {
+    "babel-cli": "^6.9.0",
+    "babel-plugin-transform-flow-strip-types": "^6.8.0",
+    "babel-preset-es2015": "^6.9.0",
+    "flow-bin": "^0.26.0",
+    "in-publish": "^2.0.0",
+    "standard": "^7.1.1",
     "washington": "^0.12.0"
   }
 }
