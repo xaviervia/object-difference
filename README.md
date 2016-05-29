@@ -40,3 +40,7 @@ arrayDifference(
 ```
 
 Absence of `key` property will throw an Error. To be tested with a comparisonFunction that runs a simple reference comparison.
+
+## License
+
+See [License](LICENSE) attached.
